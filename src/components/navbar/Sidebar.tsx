@@ -1,31 +1,41 @@
 import React from 'react';
 
+import { Icon } from '../../icons';
 import logo from '../../images/logo.svg';
 import { ReturnComponentType } from '../../types';
 
-import s from './navbar.module.scss';
+import s from './sidebar.module.scss';
+
+const icons = [
+  { id: '1', iconName: 'totals', title: 'Итоги', isActive: false },
+  { id: '2', iconName: 'orders', title: 'Заказы', isActive: false },
+  { id: '3', iconName: 'messages', title: 'Сообщения', isActive: false },
+  { id: '4', iconName: 'calls', title: 'Звонки', isActive: true },
+  { id: '5', iconName: 'agents', title: 'Контрагенты', isActive: false },
+  { id: '6', iconName: 'documents', title: 'Документы', isActive: false },
+  { id: '7', iconName: 'performers', title: 'Исполнители', isActive: false },
+  { id: '8', iconName: 'reports', title: 'Отчеты', isActive: false },
+  { id: '9', iconName: 'base', title: 'База знаний', isActive: false },
+  { id: '10', iconName: 'settings', title: 'Настройки', isActive: false },
+];
 
 export const Sidebar = (): ReturnComponentType => (
   <div className={s.sidebar}>
     <div className={s.wrapper}>
       <img className={s.logo} src={logo} alt="pic" />
       <ul className={s.items}>
-        <li className={s.item}>Итоги</li>
-        <li className={s.item}>Заказы</li>
-        <li className={s.item}>Сообщения</li>
-        <li className={s.item}>Звонки</li>
-        <li className={s.item}>Контрагенты</li>
-        <li className={s.item}>Документы</li>
-        <li className={s.item}>Исполнители</li>
-        <li className={s.item}>Отчеты</li>
-        <li className={s.item}>База знаний</li>
-        <li className={s.item}>Настройки</li>
+        {icons.map(icon => (
+          <li key={icon.id} className={s.item}>
+            <Icon icon={icon.iconName} size="22px" />
+            <span className={s.title}>{icon.title}</span>
+          </li>
+        ))}
       </ul>
       <div className={s.buttons}>
-        <button type="button" className={s.button}>
+        <button type="button" className={s.addOrderButton}>
           Добавить заказ
         </button>
-        <button type="button" className={s.button}>
+        <button type="button" className={s.payButton}>
           Оплата
         </button>
       </div>
