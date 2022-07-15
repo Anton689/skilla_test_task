@@ -1,0 +1,53 @@
+.tableContainer{
+  padding-left: 30px;
+  background-color: #FFFF;
+  box-shadow: 0 4px 5px #E9EDF3;
+  border-radius: 8px;
+}
+
+table{
+  width: 100%;
+  border-collapse: collapse;
+}
+
+tr{
+  border-bottom: 1px solid #EAF0FA;
+  height: 65px;
+}
+
+th{
+  text-align: start;
+  &:last-child{
+    text-align: end;
+    padding-right: 40px;
+  }
+}
+
+th{
+  font-size: 14px;
+  color: #899CB1;
+  font-weight: 400;
+}
+
+td{
+  font-size: 15px;
+  color: #122945;
+  &:last-child{
+    text-align: end;
+    padding-right: 40px;
+  }
+}
+
+.source{
+  color: #5E7793;
+  width: 197px;
+}
+
+.asses{
+  padding-left: 154px;
+}
+
+.calls{
+  width: 250px;
+  padding-right: 72px;
+}

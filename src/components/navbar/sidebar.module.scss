@@ -1,5 +1,6 @@
 $addOrderLogo: url('../../images/add.svg');
 $payLogo: url('../../images/pay.svg');
+$indicator: url('../../images/indicator.svg');
 
 %buttons {
   width: 200px;
@@ -11,12 +12,21 @@ $payLogo: url('../../images/pay.svg');
   background: #005FF8 no-repeat right 14px center;
 }
 
-//TODO поправить высоту и border
-.sidebar{
-  max-width: 240px;
+%item{
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
+  height: 52px;
   width: 100%;
-  //height: 963px;
-  border: 1px solid red;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.6);
+  border-left: 3px solid transparent;
+}
+
+.sidebar{
+  position: fixed;
+  width: 240px;
+  min-height: 100vh;
   background-color: #091336;
   .wrapper{
     padding-top: 20px;
@@ -26,24 +36,19 @@ $payLogo: url('../../images/pay.svg');
   }
   .items{
     padding-top: 32px;
-    .item{
-      display: flex;
-      align-items: center;
-      padding-left: 12px;
-      height: 52px;
-      width: 100%;
-      font-size: 16px;
-      color: rgba(255, 255, 255, 0.6);
-      //text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-      &:hover{
-        background-color: grey;
-        border-left: 3px solid #005FF8;
-      }
+    .item {
+      @extend %item;
+    }
+    .activeItem{
+      @extend %item;
+      border-left: 3px solid #005FF8;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+      background: rgba(216, 228, 251, 0.32) $indicator no-repeat 95% 60%;
+    }
       .title{
         padding-left: 13px;
       }
     }
-  }
   .buttons{
     display: flex;
     flex-direction: column;

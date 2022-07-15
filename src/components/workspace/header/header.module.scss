@@ -1,27 +1,52 @@
+$pointer: "../../../images/pointer.svg";
+
 .header{
   width: 100%;
+  display: flex;
+  align-items: center;
   height: 64px;
-  background-color: #FFFF;
-  box-shadow: 0px 4px 5px #E9EDF3;
+  background-color: white;
+  box-shadow: 0 4px 5px #e9edf3;
   .wrapper{
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    .date{
+      font-size: 15px;
+      color: #899CB1;
+    }
+    .callsInformation{
+      display: flex;
+      justify-content: space-between;
+      width: 594px;
+    }
+    .profileInformation{
+      display: flex;
+      align-items: center;
+      .name{
+        display: inline-block;
+        min-width: 200px;
+        max-width: 250px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        font-size: 15px;
+        color: #899CB1;
+        &:after{
+          content: url($pointer);
+          padding-left: 90px;
+        }
+      }
+      .avatar{
+        margin-left: 41px;
+        padding-right: 10px;
+        background-image: url($pointer);
+        background-repeat: no-repeat;
+        background-position: right center;
+      }
+    }
   }
 }
 
-.date{
 
-}
-
-.callInformation{
-  display: flex;
-  justify-content: space-between;
-  width: 594px;
-}
-
-.search{
-}
-
-.profileInformation{
-}
 

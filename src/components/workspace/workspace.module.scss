@@ -1,18 +1,55 @@
 .workspace {
-  width: 100%;
-}
-
-.content{
-  height: 100%;
-  background-color: #F1F4F9;
-}
-
-.balance{
-  display: flex;
-  justify-content: flex-end;
+  width: calc(100% - 240px);
+  margin-left: auto;
+  .content{
+    height: 100%;
+    margin-left: auto;
+    background-color: #F1F4F9;
+  }
+  .balanceInfo{
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 20px;
+    .balanceDisplay{
+      width: 145px;
+      height: 40px;
+      border-radius: 48px;
+      background-color: #FFFF;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+      .amount{
+        font-size: 14px;
+        padding-right: 15px;
+        font-weight: 600;
+      }
+    }
+  }
 }
 
 .optionsMenu{
   display: flex;
   justify-content: space-between;
-}
+  align-items: center;
+  padding-top: 32px;
+  .callsSearch{
+    display: flex;
+    width: 482px;
+    height: 40px;
+    background: url("../../images/mgf.svg") no-repeat 1px center;
+    &:focus{
+      border: 1px solid blue;
+    }
+    .search{
+      margin-left: 28px;
+      border: 0;
+      background: transparent;
+      &::placeholder{
+        font-size: 14px;
+        color: #5E7793;
+      }
+    }
+  }
+
+  }

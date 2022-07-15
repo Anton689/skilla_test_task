@@ -25,7 +25,7 @@ export const Sidebar = (): ReturnComponentType => (
       <img className={s.logo} src={logo} alt="pic" />
       <ul className={s.items}>
         {icons.map(icon => (
-          <li key={icon.id} className={s.item}>
+          <li key={icon.id} className={icon.isActive ? s.activeItem : s.item}>
             <Icon icon={icon.iconName} size="22px" />
             <span className={s.title}>{icon.title}</span>
           </li>

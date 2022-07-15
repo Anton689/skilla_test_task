@@ -1,6 +1,8 @@
 import React from 'react';
 
+import add from '../../images/addButton.svg';
 import { ReturnComponentType } from '../../types';
+import { CallsTable } from '../callsTable';
 
 import styles from './container.module.scss';
 import { Header } from './header';
@@ -11,12 +13,25 @@ export const Workspace = (): ReturnComponentType => (
     <Header />
     <div className={s.content}>
       <div className={styles.container}>
-        <div className={s.balance}>
-          <div>Balance</div>
+        <div className={s.balanceInfo}>
+          <div className={s.balanceDisplay}>
+            <span className={s.title}>Баланс:</span>
+            <span className={s.amount}>272 ₽ </span>
+            <span>
+              <img src={add} alt="calendar" />
+            </span>
+          </div>
           <div>Calendar</div>
         </div>
         <div className={s.optionsMenu}>
-          <input type="text" />
+          <div className={s.callsSearch}>
+            <input
+              className={s.search}
+              type="text"
+              placeholder="Поиск по звонкам"
+              disabled
+            />
+          </div>
           <div className={s.sortOptions}>
             <span>Vse tipy</span>
             <span>Vse sotrudnyki</span>
@@ -26,6 +41,7 @@ export const Workspace = (): ReturnComponentType => (
             <span>Vse oshibki</span>
           </div>
         </div>
+        <CallsTable />
       </div>
     </div>
   </div>
