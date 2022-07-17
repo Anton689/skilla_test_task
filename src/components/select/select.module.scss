@@ -1,0 +1,99 @@
+$activeArrowDown: "../../images/activeArrowDown.svg";
+$activeArrowUp: "../../images/activeArrow.svg";
+$defaultArrow: "../../images/defArrow.svg";
+$activeArrow: "../../images/activeArrow.svg";
+
+%generalStyleTitle{
+  padding-right: 15px;
+  font-size: 14px;
+  color: #5E7793;
+  cursor: pointer;
+}
+
+.wrapper{
+  position: relative;
+}
+
+.header{
+  margin-right: 32px;
+  &:last-child{
+    margin-right: 0;
+  }
+  &:first-child{
+    margin-right: 32px;
+  }
+}
+
+.title{
+  @extend %generalStyleTitle;
+  &:hover{
+    color: #005FF8;
+    background: url($activeArrowDown) no-repeat right center;
+  }
+}
+
+.secondTitle{
+  @extend %generalStyleTitle;
+  &:hover{
+    color: #005FF8;
+    background: url($activeArrowUp) no-repeat right center;
+  }
+}
+
+.activeTitle{
+  @extend %generalStyleTitle;
+  color: #005FF8;
+  &:hover{
+    background: url($activeArrowDown) no-repeat right center;
+  }
+}
+
+.secondActiveTitle{
+  @extend %generalStyleTitle;
+  color: #005FF8;
+  &:hover{
+    background: url($activeArrowUp) no-repeat right center;
+  }
+}
+
+.defaultArrow{
+  background: url($defaultArrow) no-repeat right center;
+}
+
+.activeArrow{
+  background: url($activeArrow) no-repeat right center;
+}
+
+.list{
+  position: absolute;
+  right: 30px;
+  box-shadow: 0 0 26px rgba(233, 237, 243, 0.8);
+  border-radius: 4px;
+  background: #FFFFFF;
+  width: 200px;
+  margin-top: 12px;
+
+  .listItem{
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    font-size: 14px;
+    color: #899CB1;
+    cursor: pointer;
+    &:hover{
+      background: rgba(0, 44, 251, 0.13);
+      color: #122945;
+    }
+    .item{
+      .activeItem{
+        color: #005FF8;
+      }
+    }
+  }
+}
+
+
+
+
+

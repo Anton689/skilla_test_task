@@ -1,1 +1,1 @@
-export { callsReducer } from './callsSlice';
+export { callsReducer, addedSortValue } from './callsSlice';

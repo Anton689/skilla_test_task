@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-const token = 'testtoken';
+const token = process.env.REACT_APP_TOKEN;
 
-export const instance = axios.create({
+export const instanceCalls = axios.create({
   baseURL: process.env.REACT_APP_BASE_URL,
   headers: { Authorization: `Bearer ${token}` },
 });

@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-import { useAppSelector } from '../../hooks';
+import { useAppDispatch, useAppSelector } from '../../hooks';
 import incomingLogo from '../../images/incommingCall.svg';
 import outgoingLogo from '../../images/outgoing .svg';
-import { selectCalls } from '../../store/selectors';
+import { selectCalls, selectParams } from '../../store/selectors';
+import { fetchCalls } from '../../store/slices/callsSlice';
 import { ReturnComponentType } from '../../types';
 import { changeFormat } from '../../utils';
+import { AudioPlayer } from '../audioPlayer';
 
 import s from './callsTable.module.scss';
 
@@ -17,23 +19,27 @@ const callTypeImg = {
 };
 
 export const CallsTable = (): ReturnComponentType => {
+  const dispatch = useAppDispatch();
+
   const calls = useAppSelector(selectCalls);
+  const params = useAppSelector(selectParams);
 
-  const time1 = (seconds: string): any => {
-    // eslint-disable-next-line @typescript-eslint/no-magic-numbers
-    const min = Math.floor(+seconds / 60);
-    // eslint-disable-next-line @typescript-eslint/no-magic-numbers
-    const sec = +seconds - min * 60;
-    // eslint-disable-next-line @typescript-eslint/no-magic-numbers
-    const min1 = min === 0 ? `${0}:${sec}` : `${min}:${sec}`;
-    return min1;
-  };
-
-  // eslint-disable-next-line @typescript-eslint/no-magic-numbers
-  console.log(time1('130'));
+  useEffect(() => {
+    dispatch(fetchCalls());
+  }, [params]);
 
   const callsRows = calls.map(
-    ({ id, in_out, date, person_avatar, from_number, to_number, source, time }) => {
+    ({
+      id,
+      in_out,
+      date,
+      person_avatar,
+      from_number,
+      to_number,
+      source,
+      time,
+      record,
+    }) => {
       const phoneNumberType = in_out === SORT_VALUE ? from_number : to_number;
       const typeOfCall =
         in_out === SORT_VALUE ? callTypeImg.incoming : callTypeImg.outgoing;
@@ -49,7 +55,7 @@ export const CallsTable = (): ReturnComponentType => {
           <td className={s.calls}>{phoneNumberType}</td>
           <td className={s.source}>{source}</td>
           <td />
-          <td>{time}</td>
+          <td>{record && <AudioPlayer />}</td>
         </tr>
       );
     },

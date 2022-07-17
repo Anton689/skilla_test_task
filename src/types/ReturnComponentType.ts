@@ -1,3 +1,5 @@
 import { ReactElement } from 'react';
-// TODO возможно убрать этот тип
-export type ReturnComponentType = ReactElement;
+
+import { Nullable } from './Nullable';
+
+export type ReturnComponentType = Nullable<ReactElement>;

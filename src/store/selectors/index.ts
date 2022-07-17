@@ -1,1 +1,1 @@
-export { selectCalls } from './callsSelectors';
+export { selectCalls, selectParams } from './callsSelectors';

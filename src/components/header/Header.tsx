@@ -1,12 +1,12 @@
 import React from 'react';
 
-import convCalls from '../../../images/conv_calls.svg';
-import avatar from '../../../images/headerAvatar.svg';
-import search from '../../../images/mgf.svg';
-import newcalls from '../../../images/new_calls.svg';
-import qualcalls from '../../../images/qual_calls.svg';
-import { ReturnComponentType } from '../../../types';
-import styles from '../container.module.scss';
+import convCalls from '../../images/conv_calls.svg';
+import avatar from '../../images/headerAvatar.svg';
+import search from '../../images/mgf.svg';
+import newcalls from '../../images/new_calls.svg';
+import qualcalls from '../../images/qual_calls.svg';
+import { ReturnComponentType } from '../../types';
+import styles from '../workspace/container.module.scss';
 
 import s from './header.module.scss';
 
