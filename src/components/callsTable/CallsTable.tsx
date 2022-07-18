@@ -7,7 +7,7 @@ import { selectCalls, selectParams } from '../../store/selectors';
 import { fetchCalls } from '../../store/slices/callsSlice';
 import { ReturnComponentType } from '../../types';
 import { changeFormat } from '../../utils';
-import { AudioPlayer } from '../audioPlayer';
+import { Audio } from '../audio';
 
 import s from './callsTable.module.scss';
 
@@ -39,6 +39,7 @@ export const CallsTable = (): ReturnComponentType => {
       source,
       time,
       record,
+      partnership_id,
     }) => {
       const phoneNumberType = in_out === SORT_VALUE ? from_number : to_number;
       const typeOfCall =
@@ -55,7 +56,11 @@ export const CallsTable = (): ReturnComponentType => {
           <td className={s.calls}>{phoneNumberType}</td>
           <td className={s.source}>{source}</td>
           <td />
-          <td>{record && <AudioPlayer />}</td>
+          <td>
+            {record && (
+              <Audio recordId={record} partnershipId={partnership_id} time={time} />
+            )}
+          </td>
         </tr>
       );
     },
@@ -71,7 +76,7 @@ export const CallsTable = (): ReturnComponentType => {
             <th>Звонок</th>
             <th>Источник</th>
             <th className={s.asses}>Оценка</th>
-            <th>Длительность</th>
+            <th style={{ width: '500px' }}>Длительность</th>
           </tr>
         </thead>
 

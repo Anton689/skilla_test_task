@@ -10,6 +10,7 @@ export type CallType = {
   to_number: string;
   source: string;
   partner_data: PartnerType;
+  partnership_id: string;
   record: string | null;
 };
 

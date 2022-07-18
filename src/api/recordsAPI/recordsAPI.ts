@@ -1,10 +1,13 @@
 import { instanceRecords } from './instance';
 
 export const recordsAPI = {
-  fetchRecords(params: paramsType) {
-    return instanceRecords
-      .post('', {}, { params, responseType: 'blob' })
-      .then(res => console.log(res.data));
+  async fetchRecords(params: paramsType) {
+    try {
+      const res = await instanceRecords.post('', {}, { params, responseType: 'blob' });
+      return res.data;
+    } catch (e: any) {
+      return console.log(e.message);
+    }
   },
 };
 

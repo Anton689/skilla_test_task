@@ -1,0 +1,53 @@
+@import "react-h5-audio-player/src/styles.scss";
+
+.wrapper{
+  width: 352px;
+  border-radius: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #EAF0FA;
+  padding: 0px 17px;
+  height: 48px;
+}
+
+.controlButton{
+  border-radius: 50%;
+  border: none;
+  width: 24px;
+  height: 24px;
+  color: #FFFFFF;
+  cursor: pointer;
+  background: #FFFFFF url("../../../images/play.svg") no-repeat center center;
+}
+
+.controlButtonPause{
+  border-radius: 50%;
+  border: none;
+  width: 24px;
+  height: 24px;
+  color: #FFFFFF;
+  cursor: pointer;
+  background: #FFFFFF url("../../../images/pause.svg") no-repeat center center;
+}
+
+.closeButton{
+  width: 14px;
+  height: 14px;
+  border: none;
+  cursor: pointer;
+  background: #EAF0FA url("../../../images/clodeDefoult.svg");
+  &:hover{
+    background-image: url("../../../images/closePlayer.svg");
+  }
+}
+
+.download{
+  cursor: pointer;
+}
+.time{
+  font-size: 14px;
+}
+
+
+
