@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/skilla_test_task/static/css/main.4262d9b5.css",
+    "main.js": "/skilla_test_task/static/js/main.11994f7d.js",
+    "static/media/headerAvatar.svg": "/skilla_test_task/static/media/headerAvatar.1a78038ae91421cbc4396839831c521b.svg",
+    "static/media/qual_calls.svg": "/skilla_test_task/static/media/qual_calls.b49cc9523d289221f350727e6a84ad5d.svg",
+    "static/media/conv_calls.svg": "/skilla_test_task/static/media/conv_calls.9493ebf45edadadb41a0bd40e2b5262b.svg",
+    "static/media/new_calls.svg": "/skilla_test_task/static/media/new_calls.bbe27a752f713c55609aa6f267bb1167.svg",
+    "static/media/logo.svg": "/skilla_test_task/static/media/logo.c02089f1b3fda3c36d900ed693700252.svg",
+    "static/media/indicator.svg": "/skilla_test_task/static/media/indicator.0ee2ffcf8284afd7fbce.svg",
+    "static/media/activeArrow.svg": "/skilla_test_task/static/media/activeArrow.53bb33ea1fc6eaccd3e6.svg",
+    "static/media/activeArrowDown.svg": "/skilla_test_task/static/media/activeArrowDown.ea1538f5954b8e2ccb68.svg",
+    "static/media/defArrow.svg": "/skilla_test_task/static/media/defArrow.5258c6561b6748dc0e86.svg",
+    "static/media/mgf.svg": "/skilla_test_task/static/media/mgf.5c256363d20308b8e6b5d885f1798174.svg",
+    "static/media/play.svg": "/skilla_test_task/static/media/play.5a53236c82e7542b2909.svg",
+    "index.html": "/skilla_test_task/index.html",
+    "static/media/pay.svg": "/skilla_test_task/static/media/pay.4604ba2f49eddf1c94af.svg",
+    "static/media/add.svg": "/skilla_test_task/static/media/add.59e53661d059eaa31b8d.svg",
+    "static/media/incommingCall.svg": "/skilla_test_task/static/media/incommingCall.3dcdf08697f437f3b849b99c0c0eb9cd.svg",
+    "static/media/addButton.svg": "/skilla_test_task/static/media/addButton.e68f9c611aa32d5ea97cb514453f6025.svg",
+    "static/media/clodeDefoult.svg": "/skilla_test_task/static/media/clodeDefoult.a50c91c819ef9971539c.svg",
+    "static/media/closePlayer.svg": "/skilla_test_task/static/media/closePlayer.fe56de551573da0df113.svg",
+    "static/media/outgoing .svg": "/skilla_test_task/static/media/outgoing .7301c6e923712ed881db43da9ba49e06.svg",
+    "static/media/pointer.svg": "/skilla_test_task/static/media/pointer.785b6f7ef662a72882e6.svg",
+    "static/media/download.svg": "/skilla_test_task/static/media/download.7fac8871bec89252eadc3396d44d2b95.svg",
+    "static/media/pause.svg": "/skilla_test_task/static/media/pause.6d4e391bfcb07bd0f377.svg",
+    "main.4262d9b5.css.map": "/skilla_test_task/static/css/main.4262d9b5.css.map",
+    "main.11994f7d.js.map": "/skilla_test_task/static/js/main.11994f7d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4262d9b5.css",
+    "static/js/main.11994f7d.js"
+  ]
+}
