@@ -1,93 +1,82 @@
-import React, { useEffect, useRef, useState } from 'react';
-
-import { Nullable, OptionsType, ReturnComponentType } from '../../types';
+import React, { memo, useRef, useState } from 'react';
 
 import s from './select.module.scss';
+
+import { useClickOutside } from 'hooks';
+import { Nullable, OptionType, ReturnComponentType } from 'types';
 
 type SelectType = {
   onClick?: (value: Nullable<number>) => void;
   defaultOption: string;
-  items?: OptionsType;
+  items?: OptionType[];
   disable?: boolean;
 };
 
-export const Select = ({
-  defaultOption,
-  items,
-  disable,
-  onClick,
-}: SelectType): ReturnComponentType => {
-  const ref = useRef<Nullable<HTMLDivElement>>(null);
+export const Select = memo(
+  ({ defaultOption, items, disable, onClick }: SelectType): ReturnComponentType => {
+    const ref = useRef<Nullable<HTMLDivElement>>(null);
 
-  const [open, setOpen] = useState(false);
-  const [currentValue, setCurrentValue] = useState(defaultOption);
+    const [open, setOpen] = useState(false);
+    const [currentValue, setCurrentValue] = useState(defaultOption);
 
-  useEffect(() => {
-    const clickedOutside = (e: MouseEvent) => {
-      if (open && ref.current && !ref.current.contains(e.target as Node)) {
-        setOpen(false);
+    useClickOutside(open, setOpen, ref);
+
+    const setStyleToTitle = (): string => {
+      const evenly = currentValue === defaultOption;
+      const notEvenly = currentValue !== defaultOption;
+
+      if (!open && evenly) {
+        return `${s.title} ${s.defaultArrow}`;
       }
+      if (!open && notEvenly) {
+        return `${s.activeTitle} ${s.defaultArrow}`;
+      }
+      if (open && evenly) {
+        return `${s.secondTitle} ${s.activeArrow}`;
+      }
+      return `${s.secondActiveTitle} ${s.activeArrow}`;
     };
-    document.addEventListener('click', clickedOutside);
-    return () => {
-      document.removeEventListener('click', clickedOutside);
+
+    const handleOnClick = (value: Nullable<number>, title: string) => {
+      if (onClick) {
+        onClick(value);
+      }
+      setCurrentValue(title);
+      setOpen(!open);
     };
-  }, [open]);
 
-  const setStyleToTitle = (): string => {
-    const evenly = currentValue === defaultOption;
-    const notEvenly = currentValue !== defaultOption;
+    const toggle = (): void => setOpen(!open);
 
-    if (!open && evenly) {
-      return `${s.title} ${s.defaultArrow}`;
+    if (disable) {
+      return (
+        <div className={s.header}>
+          <p className={`${s.title} ${s.defaultArrow}`}>{currentValue}</p>
+        </div>
+      );
     }
-    if (!open && notEvenly) {
-      return `${s.activeTitle} ${s.defaultArrow}`;
-    }
-    if (open && evenly) {
-      return `${s.secondTitle} ${s.activeArrow}`;
-    }
-    return `${s.secondActiveTitle} ${s.activeArrow}`;
-  };
-
-  const handleOnClick = (value: Nullable<number>, title: string) => {
-    if (onClick) {
-      onClick(value);
-    }
-    setCurrentValue(title);
-    setOpen(!open);
-  };
-
-  const toggle = (): void => setOpen(!open);
-
-  if (disable) {
     return (
-      <div className={s.header}>
-        <p className={`${s.title} ${s.defaultArrow}`}>{currentValue}</p>
+      <div ref={ref} className={s.wrapper}>
+        <div className={s.header} onClick={() => toggle()}>
+          <p className={setStyleToTitle()}>{currentValue}</p>
+        </div>
+
+        {open && (
+          <ul className={s.list}>
+            {items &&
+              items.map(({ id, title, value }) => (
+                <li
+                  key={id}
+                  className={s.listItem}
+                  onClick={() => handleOnClick(value, title)}
+                >
+                  <span className={title === currentValue ? s.activeItem : s.item}>
+                    {title}
+                  </span>
+                </li>
+              ))}
+          </ul>
+        )}
       </div>
     );
-  }
-  return (
-    <div ref={ref} className={s.wrapper}>
-      <div className={s.header} onClick={() => toggle()}>
-        <p className={setStyleToTitle()}>{currentValue}</p>
-      </div>
-      {open && (
-        <ul className={s.list}>
-          {items &&
-            items.map(item => (
-              <li
-                key={item.id}
-                className={s.listItem}
-                onClick={() => handleOnClick(item.value, item.title)}
-              >
-                <span className={item.title === currentValue ? s.activeItem : s.item}>
-                  {item.title}
-                </span>
-              </li>
-            ))}
-        </ul>
-      )}
-    </div>
-  );
-};
+  },
+);

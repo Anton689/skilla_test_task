@@ -1,6 +1,5 @@
 import React from 'react';
 
-// TODO пофиксить
 // eslint-disable-next-line import/order
 import ReactDOM from 'react-dom/client';
 

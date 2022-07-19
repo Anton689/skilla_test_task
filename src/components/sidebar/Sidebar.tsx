@@ -1,10 +1,11 @@
 import React from 'react';
 
-import { Icon } from '../../icons';
 import logo from '../../images/logo.svg';
-import { ReturnComponentType } from '../../types';
 
 import s from './sidebar.module.scss';
+
+import { Icon } from 'icons';
+import { ReturnComponentType } from 'types';
 
 const icons = [
   { id: '1', iconName: 'totals', title: 'Итоги', isActive: false },

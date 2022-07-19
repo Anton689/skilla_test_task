@@ -1,5 +1,8 @@
+import { Nullable } from '../../types';
+
 export type ParamsType = {
-  date_start: string | null;
-  date_end: string | null;
-  in_out: number | null;
+  date_start: Nullable<string>;
+  date_end: Nullable<string>;
+  in_out: Nullable<number>;
+  limit: Nullable<number>;
 };

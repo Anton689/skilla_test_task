@@ -1,0 +1,108 @@
+%defaultButtonsStyle{
+  width: 16px;
+  height: 24px;
+  border: none;
+  background: no-repeat center center;
+  cursor: pointer;
+}
+
+.wrapper{
+  position: relative;
+  padding-left: 48px;
+}
+
+.header{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.currentValue{
+  font-size: 14px;
+  color: #005FF8;
+  position: relative;
+  &:before{
+    content: url("../../images/icon-calendar.svg");
+    position: absolute;
+    right: 43px;
+    bottom: -3px;
+  }
+  &:hover:before{
+    content: url("../../images/iconcalendarActive.svg");
+    position: absolute;
+    right: 43px;
+    bottom: -3px
+  }
+
+}
+
+.prevButton{
+  @extend %defaultButtonsStyle;
+  margin-right: 35px;
+  background-image: url("../../images/prevBut.svg");
+  &:hover{
+    background-image: url("../../images/activePrevBut.svg");
+  }
+}
+
+.nextButton{
+  @extend %defaultButtonsStyle;
+  background-image: url("../../images/nextBut.svg");
+  margin-left: 12px;
+  &:hover{
+    background-image: url("../../images/activeNextBut.svg");
+  }
+}
+
+.list{
+  position: absolute;
+  right: 5px;
+  box-shadow: 0 0 26px rgba(233, 237, 243, 0.8);
+  border-radius: 4px;
+  background: #FFFFFF;
+  width: 200px;
+  margin-top: 12px;
+
+  .listItem{
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    font-size: 14px;
+    color: #899CB1;
+    cursor: pointer;
+    &:hover{
+      background: rgba(0, 44, 251, 0.13);
+      color: #122945;
+    }
+    .item{
+      .activeItem{
+        color: #005FF8;
+      }
+    }
+    .activeItem{
+      color: #005FF8;
+    }
+  }
+}
+
+.setDate{
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  font-size: 14px;
+  color: #122945;
+  cursor: pointer;
+}
+
+.datePlaceholder{
+  padding-top: 1px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  font-size: 14px;
+  color: #899CB1;
+  cursor: pointer;
+  background: url("../../images/icon-calendar.svg") no-repeat right top;
+  margin-right: 21px;
+}

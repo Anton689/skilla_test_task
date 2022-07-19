@@ -32,10 +32,12 @@
     "no-magic-numbers": "off",
     "default-param-last": "off",
     "no-use-before-define": "off",
+    "no-param-reassign": "off",
     "jsx-a11y/control-has-associated-label": "off",
     "camelcase": "off",
     "react/require-default-props": "off",
     "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/mouse-events-have-key-events": "off",
     "jsx-a11y/no-static-element-interactions": "off",
     "jsx-a11y/no-noninteractive-element-interactions": "off",
     "no-multiple-empty-lines": [
@@ -48,9 +50,11 @@
       "error"
     ],
     "@typescript-eslint/camelcase": "off",
+    "@typescript-eslint-no-param-reassign": "off",
     "@typescript-jsx-a11y/control-has-associated-label": "off",
     "@typescript-react/require-default-props": "off",
     "@typescript-jsx-a11y/no-static-element-interactions": "off",
+    "@jsx-a11y/mouse-events-have-key-events": "off",
     "@jsx-a11y/click-events-have-key-events": "off",
     "@jsx-a11y/jsx-a11y/no-noninteractive-element-interactions": "off",
     "@typescript-eslint/no-unused-vars": [

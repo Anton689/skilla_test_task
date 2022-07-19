@@ -3,9 +3,8 @@ const ZERO = 0;
 const TEN = 10;
 
 export const changeFormatToMinutes = (seconds: number): string => {
-  const min = Math.floor(seconds / SEC_IN_MIN);
-  const sec = seconds - min * SEC_IN_MIN;
-  const secondsFormat = sec < TEN ? `0${sec}` : `${sec}`;
-  const finalFormat = min === ZERO ? `${ZERO}:${sec}` : `${min}:${secondsFormat}`;
-  return finalFormat;
+  const minutes = Math.floor(seconds / SEC_IN_MIN);
+  const restSeconds = seconds - minutes * SEC_IN_MIN;
+  const secondsFormat = restSeconds < TEN ? `${ZERO}${restSeconds}` : `${restSeconds}`;
+  return minutes === ZERO ? `${ZERO}:${restSeconds}` : `${minutes}:${secondsFormat}`;
 };

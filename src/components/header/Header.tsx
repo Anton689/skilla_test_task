@@ -5,10 +5,11 @@ import avatar from '../../images/headerAvatar.svg';
 import search from '../../images/mgf.svg';
 import newcalls from '../../images/new_calls.svg';
 import qualcalls from '../../images/qual_calls.svg';
-import { ReturnComponentType } from '../../types';
-import styles from '../workspace/container.module.scss';
+import styles from '../calls/container.module.scss';
 
 import s from './header.module.scss';
+
+import { ReturnComponentType } from 'types';
 
 export const Header = (): ReturnComponentType => (
   <div className={s.header}>

@@ -9,7 +9,9 @@
   .balanceInfo{
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     padding-top: 20px;
+    flex-wrap: wrap;
     .balanceDisplay{
       width: 145px;
       height: 40px;
@@ -56,4 +58,6 @@
 
 .sortOptions{
   display: flex;
+  justify-content: flex-end;
+  width: 100%;
 }

@@ -1,15 +1,19 @@
 import React, { useEffect } from 'react';
 
-import { useAppDispatch, useAppSelector } from '../../hooks';
+import { useSelector } from 'react-redux';
+
 import incomingLogo from '../../images/incommingCall.svg';
 import outgoingLogo from '../../images/outgoing .svg';
-import { selectCalls, selectParams } from '../../store/selectors';
-import { fetchCalls } from '../../store/slices/callsSlice';
-import { ReturnComponentType } from '../../types';
-import { changeFormat } from '../../utils';
 import { Audio } from '../audio';
 
 import s from './callsTable.module.scss';
+import { Columns } from './columns';
+
+import { useAppDispatch } from 'hooks';
+import { selectCalls, selectParams } from 'store/selectors';
+import { fetchCalls } from 'store/slices/callsSlice';
+import { ReturnComponentType } from 'types';
+import { getCorrectTime } from 'utils';
 
 const SORT_VALUE = 1;
 
@@ -21,8 +25,8 @@ const callTypeImg = {
 export const CallsTable = (): ReturnComponentType => {
   const dispatch = useAppDispatch();
 
-  const calls = useAppSelector(selectCalls);
-  const params = useAppSelector(selectParams);
+  const calls = useSelector(selectCalls);
+  const params = useSelector(selectParams);
 
   useEffect(() => {
     dispatch(fetchCalls());
@@ -49,7 +53,7 @@ export const CallsTable = (): ReturnComponentType => {
           <td>
             <img src={typeOfCall} alt="logo" />
           </td>
-          <td>{changeFormat(date)}</td>
+          <td>{getCorrectTime(date)}</td>
           <td>
             <img src={person_avatar} alt="avatar" />
           </td>
@@ -69,15 +73,7 @@ export const CallsTable = (): ReturnComponentType => {
     <div className={s.tableContainer}>
       <table>
         <thead>
-          <tr className={s.trHead}>
-            <th>Тип</th>
-            <th>Время</th>
-            <th>Сотрудник</th>
-            <th>Звонок</th>
-            <th>Источник</th>
-            <th className={s.asses}>Оценка</th>
-            <th style={{ width: '500px' }}>Длительность</th>
-          </tr>
+          <Columns />
         </thead>
 
         <tbody>{callsRows}</tbody>

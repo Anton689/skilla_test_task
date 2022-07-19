@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
-
-import { recordsAPI } from '../../api/recordsAPI';
-import { ReturnComponentType } from '../../types';
+import React, { useState } from 'react';
 
 import { Player } from './audioPlayer';
+
+import { recordsAPI } from 'api/recordsAPI';
+import { ReturnComponentType } from 'types';
+import { changeFormatToMinutes } from 'utils';
 
 type AudioType = {
   recordId: string;
@@ -17,8 +18,9 @@ export const Audio = ({
   time,
 }: AudioType): ReturnComponentType => {
   const [record, setRecord] = useState<string>('');
+  const [isPlayerView, setIsPlayerView] = useState<boolean>(false);
 
-  useEffect(() => {
+  const getAudioOnClick = () => {
     recordsAPI
       .fetchRecords({
         record: recordId,
@@ -30,29 +32,19 @@ export const Audio = ({
 
         setRecord(url);
       });
-  }, []);
+
+    setIsPlayerView(!isPlayerView);
+  };
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-      <Player record={record} time={time} />
+    <div>
+      {isPlayerView ? (
+        <Player record={record} time={time} closeAction={setIsPlayerView} />
+      ) : (
+        <p style={{ cursor: 'pointer' }} onClick={getAudioOnClick}>
+          {changeFormatToMinutes(time)}
+        </p>
+      )}
     </div>
   );
 };
-
-//
-// useEffect(() => {
-//   (async () => {
-//     try {
-//       const { data } = await recordsAPI.fetchRecords({
-//         record: recordId,
-//         partnership_id: partnershipId,
-//       });
-//       const audioFile = new Blob([data], { type: 'audio/mp3' });
-//       const url = window.URL.createObjectURL(audioFile);
-//
-//       setRecord(url);
-//     } catch (e: any) {
-//       throw new Error(e);
-//     }
-//   })();
-// }, []);
