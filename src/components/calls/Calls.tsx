@@ -47,7 +47,7 @@ export const Calls = (): ReturnComponentType => {
           <div className={s.balanceInfo}>
             <Balance />
 
-            <div>
+            <div style={{ width: '200px' }}>
               <DateSelect
                 onClick={setStartDate}
                 defaultOption="3 дня"
