@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/skilla_test_task/static/css/main.4262d9b5.css",
-    "main.js": "/skilla_test_task/static/js/main.11994f7d.js",
+    "main.css": "/skilla_test_task/static/css/main.daf4d416.css",
+    "main.js": "/skilla_test_task/static/js/main.07b129f7.js",
     "static/media/headerAvatar.svg": "/skilla_test_task/static/media/headerAvatar.1a78038ae91421cbc4396839831c521b.svg",
     "static/media/qual_calls.svg": "/skilla_test_task/static/media/qual_calls.b49cc9523d289221f350727e6a84ad5d.svg",
     "static/media/conv_calls.svg": "/skilla_test_task/static/media/conv_calls.9493ebf45edadadb41a0bd40e2b5262b.svg",
@@ -14,6 +14,8 @@
     "static/media/mgf.svg": "/skilla_test_task/static/media/mgf.5c256363d20308b8e6b5d885f1798174.svg",
     "static/media/play.svg": "/skilla_test_task/static/media/play.5a53236c82e7542b2909.svg",
     "index.html": "/skilla_test_task/index.html",
+    "static/media/icon-calendar.svg": "/skilla_test_task/static/media/icon-calendar.0946190fab09dbb5d0f9.svg",
+    "static/media/iconcalendarActive.svg": "/skilla_test_task/static/media/iconcalendarActive.77c81c8d78290f13e806.svg",
     "static/media/pay.svg": "/skilla_test_task/static/media/pay.4604ba2f49eddf1c94af.svg",
     "static/media/add.svg": "/skilla_test_task/static/media/add.59e53661d059eaa31b8d.svg",
     "static/media/incommingCall.svg": "/skilla_test_task/static/media/incommingCall.3dcdf08697f437f3b849b99c0c0eb9cd.svg",
@@ -22,13 +24,17 @@
     "static/media/closePlayer.svg": "/skilla_test_task/static/media/closePlayer.fe56de551573da0df113.svg",
     "static/media/outgoing .svg": "/skilla_test_task/static/media/outgoing .7301c6e923712ed881db43da9ba49e06.svg",
     "static/media/pointer.svg": "/skilla_test_task/static/media/pointer.785b6f7ef662a72882e6.svg",
+    "static/media/activeNextBut.svg": "/skilla_test_task/static/media/activeNextBut.e921e9e7d4a1e0b7be98.svg",
     "static/media/download.svg": "/skilla_test_task/static/media/download.7fac8871bec89252eadc3396d44d2b95.svg",
+    "static/media/nextBut.svg": "/skilla_test_task/static/media/nextBut.e4d833d4f9d15be98155.svg",
+    "static/media/activePrevBut.svg": "/skilla_test_task/static/media/activePrevBut.3d873037678be7f79f18.svg",
+    "static/media/prevBut.svg": "/skilla_test_task/static/media/prevBut.f850d09f95c068c3ac07.svg",
     "static/media/pause.svg": "/skilla_test_task/static/media/pause.6d4e391bfcb07bd0f377.svg",
-    "main.4262d9b5.css.map": "/skilla_test_task/static/css/main.4262d9b5.css.map",
-    "main.11994f7d.js.map": "/skilla_test_task/static/js/main.11994f7d.js.map"
+    "main.daf4d416.css.map": "/skilla_test_task/static/css/main.daf4d416.css.map",
+    "main.07b129f7.js.map": "/skilla_test_task/static/js/main.07b129f7.js.map"
   },
   "entrypoints": [
-    "static/css/main.4262d9b5.css",
-    "static/js/main.11994f7d.js"
+    "static/css/main.daf4d416.css",
+    "static/js/main.07b129f7.js"
   ]
 }
